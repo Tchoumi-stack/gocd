@@ -17,7 +17,7 @@ pipeline {
         }
         stage('Git checkout') {
             steps {
-                git credentialsId: 'git-cred', url: 'https://github.com/Tchoumi-stack/gocd.git'
+                git branch: 'main', credentialsId: 'git-cred', url: 'https://github.com/Tchoumi-stack/gocd.git'
             }
         }
         stage('Compile') {
