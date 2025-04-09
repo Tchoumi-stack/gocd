@@ -5,12 +5,6 @@ pipeline {
         maven 'maven3'
     }
     stages {
-        stage('Build') {
-            steps {
-                sh 'chmod +x gradlew'
-                sh './gradlew build'
-            }
-        }
         stage('Git checkout') {
             steps {
                 git branch: 'main', credentialsId: 'git-cred', url: 'https://github.com/Tchoumi-stack/gocd.git'
